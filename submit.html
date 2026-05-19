@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Submit Rental Report</h2>
+
+<form method="POST">
+
+<input type="text" name="apartment_name" placeholder="Apartment Name" required>
+
+<input type="text" name="city" placeholder="City" required>
+
+<input type="text" name="state" placeholder="State" required>
+
+<input type="number" name="rent_price" placeholder="Monthly Rent" required>
+
+<input type="number" min="1" max="10" name="rating" placeholder="Rating" required>
+
+<textarea name="review" rows="6" placeholder="Write your review..." required></textarea>
+
+<button type="submit">Submit Report</button>
+
+</form>
+
+{% endblock %}

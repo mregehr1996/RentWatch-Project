@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Search Rental Reports</h2>
+
+<form method="GET">
+
+<input type="text" name="city" placeholder="City">
+
+<input type="text" name="apartment_name" placeholder="Apartment Name">
+
+<button type="submit">Search</button>
+
+</form>
+
+<hr>
+
+{% for report in reports %}
+
+<div class="report">
+
+<h3>{{ report["apartment_name"] }}</h3>
+
+<p>
+<strong>Location:</strong>
+{{ report["city"] }}, {{ report["state"] }}
+</p>
+
+<p>
+<strong>Monthly Rent:</strong>
+${{ report["rent_price"] }}
+</p>
+
+<p>
+<strong>Rating:</strong>
+{{ report["rating"] }}/10
+</p>
+
+<p>{{ report["review"] }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
